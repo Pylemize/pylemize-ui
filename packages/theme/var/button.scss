@@ -1,0 +1,46 @@
+.p-button {
+  --button-border-radius: 2px;
+
+  // 不同类型
+  &__default {
+    --button-color: #333;
+    --button-background: #f0f0f0;
+    --button-hover: #e8e8e8;
+    --button-active: #d7d7d7;
+  }
+
+  &__primary {
+    --button-color: #fbfbfd;
+    --button-background: #2d5af1;
+    --button-hover: #5d80f4;
+    --button-active: #0f3edc;
+  }
+
+  &__success {
+    --button-color: #fbfbfd;
+    --button-background: #52b35e;
+    --button-hover: #75c37f;
+    --button-active: #40924a;
+  }
+
+  &__danger {
+    --button-color: #fbfbfd;
+    --button-background: #ff0200;
+    --button-hover: #ff5857;
+    --button-active: #cc0200;
+  }
+
+  &__warning {
+    --button-color: #fbfbfd;
+    --button-background: #fcc202;
+    --button-hover: #fed348;
+    --button-active: #c99b02;
+  }
+
+  &__info {
+    --button-color: #fbfbfd;
+    --button-background: #1d1d1f;
+    --button-hover: #4e4e56;
+    --button-active: #080808;
+  }
+}

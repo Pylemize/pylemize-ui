@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
-    "build": "pnpm clean & vite build"
+    "build": "pnpm clean & pnpm build:css & vite build",
+    "build:css": "vite build --config vite.config.css.ts",
+    "build:theme": "vite build --config vite.config.theme.ts"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +25,12 @@
     "@vue/runtime-core": "^3.3.4",
     "@vue/shared": "^3.3.4",
     "@vueuse/core": "^10.3.0",
+    "autoprefixer": "^10.4.14",
     "dayjs": "^1.11.9",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "lodash-unified": "^1.0.3",
+    "postcss-preset-env": "^9.1.1",
     "rimraf": "^5.0.1",
     "vite": "^4.4.5",
     "vue": "^3.3.4"
