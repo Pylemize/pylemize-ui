@@ -6,9 +6,9 @@ hero:
   name: "Pylemize UI"
   text: "一个有点东西，但又不多的组件库"
   tagline: 基于 Vue3 + TypeScript + Vite 开发
-  # image:
-  #   src: 
-  #   alt: LicoriceBear
+  image:
+    src: /logo.svg
+    alt: LicoriceBear
   actions:
     - theme: brand
       text: 不看指北

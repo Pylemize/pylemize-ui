@@ -1,8 +1,9 @@
-import { PButton } from "../../../packages/pylemize-ui/button"
-import PylemizeUI from "pylemize-ui"
+// import { PButton } from "pylemize-ui"
+import PylemizeUI from "../../../packages/pylemize-ui/index"
 import Theme from "vitepress/theme"
+import "./style.css"
 
-console.log(PButton)
+// console.log(PButton)
 
 export default {
   ...Theme,

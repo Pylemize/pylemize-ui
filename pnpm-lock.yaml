@@ -95,10 +95,6 @@ importers:
         version: 4.2.4(vue@3.3.4)
 
   docs:
-    dependencies:
-      pylemize-ui:
-        specifier: workspace:^
-        version: link:../packages/pylemize-ui
     devDependencies:
       vitepress:
         specifier: 1.0.0-beta.7
@@ -107,9 +103,9 @@ importers:
         specifier: 3.2.44
         version: 3.2.44
 
-  packages/pylemize-theme: {}
-
   packages/pylemize-ui: {}
+
+  packages/theme: {}
 
   play:
     dependencies:
