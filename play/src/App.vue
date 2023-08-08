@@ -2,6 +2,7 @@
 
 <template>
   <div>Hello, World</div>
+  <PButton></PButton>
 </template>
 
 <style scoped></style>

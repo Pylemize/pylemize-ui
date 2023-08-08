@@ -3,6 +3,7 @@ import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import dts from "vite-plugin-dts"
 import { resolve } from "path"
+import { name, version } from "./packages/pylemize-ui/package.json"
 
 export default defineConfig({
   plugins: [
@@ -17,7 +18,7 @@ export default defineConfig({
       insertTypesEntry: true /** 是否生成类型声明入口 */,
       cleanVueFileName: true /** 是否将 '.vue.d.ts' 文件名转换为 '.d.ts' */,
       copyDtsFiles: true /** 是否将源码里的 .d.ts 文件复制到 outputDir */,
-      include: ["./packages/components"],
+      include: ["./packages/pylemize-ui"],
       outDir: ["dist/es", "dist/lib"],
       /** 构建后回调钩子 */
       afterBuild: (): void => {
@@ -36,9 +37,7 @@ export default defineConfig({
      */
     lib: {
       entry: resolve(__dirname, "packages/pylemize-ui/index.ts"),
-      name: "PylemizeUI",
-      fileName: () => `index.js`
-      // formats: ["es", "cjs"]
+      name: "PylemizeUI"
     },
     rollupOptions: {
       external: ["vue"],
@@ -69,6 +68,7 @@ export default defineConfig({
            */
           preserveModules: true,
           dir: "dist/es",
+          sourcemap: false,
           /**
            * 输出的 chunk文件名
            *
@@ -88,7 +88,21 @@ export default defineConfig({
           /**
            * @see output.manualchunks https://cn.rollupjs.org/configuration-options/#output-manualchunks
            */
-          manualChunks: undefined
+          manualChunks: undefined,
+          /**
+           * 是否允许在自动生成的代码片断中使用
+           *
+           * @see output.generatedCode.symbols https://cn.rollupjs.org/configuration-options/#output-generatedcode-symbols
+           */
+          generatedCode: {
+            symbols: true
+          },
+          entryFileNames: (chunkInfo): string => {
+            return `${chunkInfo.name.slice(
+              0,
+              chunkInfo.name.lastIndexOf("/") + 1
+            )}index.js`
+          }
           // preserveModulesRoot: 'src'
         },
         {
@@ -99,12 +113,18 @@ export default defineConfig({
           chunkFileNames: "[name].js",
           assetFileNames: "[name].[ext]",
           inlineDynamicImports: false,
-          manualChunks: undefined
+          manualChunks: undefined,
+          entryFileNames: (chunkInfo): string => {
+            return `${chunkInfo.name.slice(
+              0,
+              chunkInfo.name.lastIndexOf("/") + 1
+            )}index.js`
+          },
+          generatedCode: {
+            symbols: true
+          }
         }
       ]
-      // globals: {
-      //   vue: 'Vue'
-      // }
     }
   }
 })
@@ -124,5 +144,5 @@ const move = (): void => {
     copyFileSync(item.input, item.outDir)
   })
 
-  // console.warn("\n" + `${name} ${version} 版本打包成功 🎉🎉🎉` + "\n")
+  console.warn("\n" + `${name} ${version} 版本打包成功 🎉🎉🎉` + "\n")
 }

@@ -1,3 +1,3 @@
-import { PButton } from "@pylemize-ui/components/button"
+import { PButton } from "./button"
 
 export default [PButton]

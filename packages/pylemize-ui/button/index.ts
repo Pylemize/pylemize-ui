@@ -1,5 +1,5 @@
 import Button from "./src/button.vue"
-import { install } from "@pylemize-ui/utils/install"
+import { install } from "../../utils/install"
 
 export const PButton = install(Button)
 

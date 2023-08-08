@@ -1,4 +1,4 @@
-import { PButton } from "@pylemize-ui/components/button"
+import { PButton } from "../../../packages/pylemize-ui/button"
 import PylemizeUI from "pylemize-ui"
 import Theme from "vitepress/theme"
 

@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
-    "build": "vite build"
+    "build": "pnpm clean & vite build"
   },
   "keywords": [],
   "author": "",

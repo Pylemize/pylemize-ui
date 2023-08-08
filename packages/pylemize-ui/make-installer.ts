@@ -1,4 +1,4 @@
-import type { App, Plugin } from "@vue/runtime-core"
+import type { App } from "@vue/runtime-core"
 
 interface Component {
   name: string
