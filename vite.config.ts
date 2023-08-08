@@ -26,24 +26,43 @@ export default defineConfig({
       }
     })
   ],
+  css: {},
+  /**
+   * 构建配置项
+   *
+   * @see 构建选项 https://cn.vitejs.dev/config/build-options.html
+   */
   build: {
     target: "modules" /** 这是指 支持原生 ES 模块、原生 ESM 动态导入 */,
     minify: true /** 压缩代码 */,
-    outDir: resolve(__dirname, "./dist"),
+    chunkSizeWarningLimit: 2 /** 打包的组件超过 2kb 警告提示 */,
+    reportCompressedSize: true /** 启用 gzip 压缩大小报告 */,
+    emptyOutDir: false,
+    outDir: resolve(__dirname, "./dist") /** 指定输出路径 */,
     /**
      * 库模式
      *
      * @see 库模式 https://cn.vitejs.dev/guide/build.html#library-mode
      */
     lib: {
-      entry: resolve(__dirname, "packages/pylemize-ui/index.ts"),
-      name: "PylemizeUI"
+      name: "PylemizeUI",
+      entry: resolve(__dirname, "packages/pylemize-ui/index.ts") /** 打包入口 */
     },
+    /**
+     * rollup 配置项
+     *
+     * @see big-list-of-options https://rollupjs.org/guide/en/#big-list-of-options
+     */
     rollupOptions: {
+      /**
+       * 确保外部化处理那些你不想打包进库的依赖
+       *
+       * @see external https://rollupjs.org/guide/en/#external
+       */
       external: ["vue"],
       output: [
         {
-          name: "PylemizeUI",
+          name: "PylemizeUI" /** 包名 */,
           format: "umd",
           exports: "named",
           sourcemap: false,
@@ -56,19 +75,42 @@ export default defineConfig({
           globals: {
             vue: "Vue"
           } /** 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量 */
+          // namespaceToStringTag: true
         },
         {
-          format: "es",
-          exports: "named",
-          // entryFileNames: '[name].js',
           /**
-           * 使用原始模块名作为文件名
+           * 打包模式
            *
-           * @see output.preserveModules https://cn.rollupjs.org/configuration-options/#output-preservemodules
+           * @see output.format https://cn.rollupjs.org/configuration-options/#output-format
            */
-          preserveModules: true,
+          format: "es",
+          /**
+           * 导出模式
+           *
+           * @see exports https://cn.rollupjs.org/configuration-options/#output-exports
+           */
+          exports: "named",
+          /**
+           * 输出路径
+           *
+           * @see output.dir https://cn.rollupjs.org/configuration-options/#output-dir
+           */
           dir: "dist/es",
+          /**
+           * @see output.sourcemap https://cn.rollupjs.org/configuration-options/#output-sourcemap
+           */
           sourcemap: false,
+          /**
+           * 输出后的文件名
+           *
+           * @see output.entryFileNames https://cn.rollupjs.org/configuration-options/#output-entryfilenames
+           */
+          entryFileNames: (chunkInfo): string => {
+            return `${chunkInfo.name.slice(
+              0,
+              chunkInfo.name.lastIndexOf("/") + 1
+            )}index.js`
+          },
           /**
            * 输出的 chunk文件名
            *
@@ -90,36 +132,38 @@ export default defineConfig({
            */
           manualChunks: undefined,
           /**
+           * 使用原始模块名作为文件名
+           *
+           * @see output.preserveModules https://cn.rollupjs.org/configuration-options/#output-preservemodules
+           */
+          preserveModules: true,
+          preserveModulesRoot: "packages/pylemize-ui",
+          /**
            * 是否允许在自动生成的代码片断中使用
            *
            * @see output.generatedCode.symbols https://cn.rollupjs.org/configuration-options/#output-generatedcode-symbols
            */
           generatedCode: {
             symbols: true
-          },
-          entryFileNames: (chunkInfo): string => {
-            return `${chunkInfo.name.slice(
-              0,
-              chunkInfo.name.lastIndexOf("/") + 1
-            )}index.js`
           }
-          // preserveModulesRoot: 'src'
         },
         {
           format: "cjs",
           exports: "named",
-          preserveModules: true,
           dir: "dist/lib",
-          chunkFileNames: "[name].js",
-          assetFileNames: "[name].[ext]",
-          inlineDynamicImports: false,
-          manualChunks: undefined,
+          sourcemap: false,
           entryFileNames: (chunkInfo): string => {
             return `${chunkInfo.name.slice(
               0,
               chunkInfo.name.lastIndexOf("/") + 1
             )}index.js`
           },
+          chunkFileNames: "[name].js",
+          assetFileNames: "[name].[ext]",
+          inlineDynamicImports: false,
+          manualChunks: undefined,
+          preserveModules: true,
+          preserveModulesRoot: "packages/pylemize-ui",
           generatedCode: {
             symbols: true
           }

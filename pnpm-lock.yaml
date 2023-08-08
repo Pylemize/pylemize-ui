@@ -14,12 +14,6 @@ importers:
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.26.2
-      '@pylemize-ui/components':
-        specifier: workspace:^
-        version: link:packages/components
-      '@pylemize-ui/utils':
-        specifier: workspace:^
-        version: link:packages/utils
       '@types/lodash':
         specifier: ^4.14.196
         version: 4.14.196
@@ -107,11 +101,7 @@ importers:
         specifier: 3.2.44
         version: 3.2.44
 
-  packages/components: {}
-
   packages/pylemize-ui: {}
-
-  packages/utils: {}
 
   play:
     dependencies:

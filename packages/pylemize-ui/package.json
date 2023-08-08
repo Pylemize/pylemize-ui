@@ -21,6 +21,7 @@
     "./lib/*.js": "./lib/*.js",
     "./*": "./*"
   },
+  "unpkg": "dist/index.umd.js",
   "keywords": [],
   "author": "",
   "license": "MIT"

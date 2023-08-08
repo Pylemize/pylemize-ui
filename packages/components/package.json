@@ -1,8 +1,0 @@
-{
-  "name": "@pylemize-ui/components",
-  "version": "0.0.2",
-  "description": "",
-  "main": "index.ts",
-  "module": "index.ts",
-  "types": "index.d.ts"
-}

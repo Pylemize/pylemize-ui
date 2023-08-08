@@ -1,3 +1,2 @@
-import { PButton } from "./button"
-
-export default [PButton]
+export { PButton } from "./button"
+export * from "./button"
