@@ -1,5 +1,14 @@
 import { defineConfig } from "vitepress"
-import VueMacros from "unplugin-vue-macros/vite"
-import Vue from "@vitejs/plugin-vue"
+import { demoblockPlugin, demoblockVitePlugin } from "vitepress-theme-demoblock"
+
 // https://vitepress.vuejs.org/config/app-configs
-export default defineConfig({})
+export default defineConfig({
+  markdown: {
+    config: md => {
+      md.use(demoblockPlugin)
+    }
+  },
+  vite: {
+    plugins: [demoblockVitePlugin()]
+  }
+})
