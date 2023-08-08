@@ -1,0 +1,14 @@
+
+> @pylemize-ui/components@0.0.2 build C:\Users\LicoriceBear\Desktop\Front-End\pylemize-ui\packages\components
+> vite build
+
+[36mvite v4.4.9 [32mbuilding for production...[36m[39m
+[32m✓[39m 0 modules transformed.
+[31mCould not resolve entry module "index.html".[39m
+[32m✓ built in 11ms[39m
+[31merror during build:
+RollupError: Could not resolve entry module "index.html".
+    at error (file:///C:/Users/LicoriceBear/Desktop/Front-End/pylemize-ui/node_modules/.pnpm/rollup@3.27.1/node_modules/rollup/dist/es/shared/node-entry.js:2245:30)
+    at ModuleLoader.loadEntryModule (file:///C:/Users/LicoriceBear/Desktop/Front-End/pylemize-ui/node_modules/.pnpm/rollup@3.27.1/node_modules/rollup/dist/es/shared/node-entry.js:24755:20)
+    at async Promise.all (index 0)[39m
+ ELIFECYCLE  Command failed with exit code 1.

@@ -4,12 +4,5 @@
   "description": "",
   "main": "index.ts",
   "module": "index.ts",
-  "types": "index.d.ts",
-  "scripts": {
-    "build": "vite build"
-  },
-  "dependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5"
-  }
+  "types": "index.d.ts"
 }
