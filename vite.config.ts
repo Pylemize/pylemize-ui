@@ -4,10 +4,15 @@ import vue from "@vitejs/plugin-vue"
 import dts from "vite-plugin-dts"
 import { resolve } from "path"
 import { name, version } from "./packages/pylemize-ui/package.json"
+import VueMacros from "unplugin-vue-macros/vite"
 
 export default defineConfig({
   plugins: [
-    vue(),
+    VueMacros({
+      plugins: {
+        vue: vue()
+      }
+    }),
     /**
      * 打包类型
      *

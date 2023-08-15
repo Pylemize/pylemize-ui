@@ -11,14 +11,35 @@
     "allowJs": true, // 允许 JavaScript 文件在你的工程中被引入
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "skipLibCheck": true,
-    "typeRoots": ["node_modules/@types", "@types"]
+    "typeRoots": [
+      "node_modules/@types",
+      "@types"
+    ],
+    "types": [
+      "unplugin-vue-macros/macros-global"
+    ]
   },
   "include": [
     "packages/**/*.ts",
     "packages/**/*.d.ts",
     "packages/**/*.vue",
     "docs/**/*.vue"
-  ]
+  ],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue-macros/volar/define-options",
+      "@vue-macros/volar/define-models",
+      "@vue-macros/volar/define-props",
+      "@vue-macros/volar/define-props-refs",
+      "@vue-macros/volar/short-vmodel",
+      "@vue-macros/volar/define-slots",
+      "@vue-macros/volar/export-props",
+      "@vue-macros/volar/jsx-directive"
+    ]
+  }
 }
