@@ -8,23 +8,23 @@ hero:
   tagline: 基于 Vue3 + TypeScript + Vite 开发
   image:
     src: /logo.svg
-    alt: LicoriceBear
+    alt: Pylemize UI Logo
   actions:
     - theme: brand
-      text: 不看指北
-      link: /guide/
+      text: 指南指北
+      link: /docs/
 
 features:
-  - icon: 🎵
-    title: Sing
-    details: 按需引入
+  - icon: 💡
+    title: 按需导入
+    details: 让生产更快
   - icon: ⚡️
-    title: Dancing
-    details: 主题切换
+    title: 优雅
+    details: 原生 css 变量，自定义更加舒心
   - icon: 🛠️
-    title: Rap
-    details: 基于TypeScript开发
-  - icon: 🏀
-    title: play
-    details: 基于Vite开发
+    title: 类型友好
+    details: 基于 TypeScript 开发，减少痛苦
+  - icon: 🏗
+    title: 芜湖
+    details: 还不起飞？
 ---
