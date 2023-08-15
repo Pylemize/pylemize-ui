@@ -4,18 +4,23 @@
     :class="classList"
     :style="styleList"
     type="button"
+    :disabled="props.disabled"
   >
     <slot />
   </button>
 </template>
+
+<script lang="ts">
+export default {
+  name: "PButton"
+}
+</script>
 
 <script setup lang="ts">
 import { useButton } from "./use-button"
 import { Props } from "./button"
 import { toRefs } from "vue"
 import { useRunFunction } from "../../_hooks"
-
-defineOptions({ name: "PButton" })
 
 const { runFunction } = useRunFunction()
 

@@ -78,6 +78,6 @@ export const Props = {
     }
   ),
   onClick: setFunctionProp<HandleMouseType>()
-}
+} as const
 
 export type ButtonProps = ExtractPropTypes<typeof Props>

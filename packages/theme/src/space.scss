@@ -1,0 +1,32 @@
+@use "./var/space.scss";
+
+.p-space {
+  display: flex;
+  justify-content: var(--space-justify);
+  align-items: var(--space-align);
+  column-gap: var(--space-column-gap);
+  row-gap: var(--space-row-gap);
+
+  &.p-space__vertical {
+    flex-direction: column;
+  }
+
+  &.p-space__wrap {
+    flex-wrap: wrap;
+  }
+
+  &.p-space__small {
+    column-gap: 6px;
+    row-gap: 4px;
+  }
+
+  &.p-space__medium {
+    column-gap: 12px;
+    row-gap: 8px;
+  }
+
+  &.p-space__large {
+    column-gap: 24px;
+    row-gap: 16px;
+  }
+}

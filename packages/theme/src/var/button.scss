@@ -1,71 +1,148 @@
 .p-button {
   --button-border-radius: 2px;
 
-  // 类型
+  // 主要类型
   &__default {
     --button-color: #333;
-    --button-background: #f0f0f0;
+    --button-background: #f2f2f2;
     --button-hover: #e8e8e8;
     --button-active: #d7d7d7;
   }
 
   &__primary {
     --button-color: #fbfbfd;
-    --button-background: #2d5af1;
-    --button-hover: #5d80f4;
-    --button-active: #0f3edc;
+    --button-background: #3c4f8d;
+    --button-hover: #5367a9;
+    --button-active: #324585;
   }
 
   &__success {
     --button-color: #fbfbfd;
-    --button-background: #52b35e;
-    --button-hover: #75c37f;
-    --button-active: #40924a;
+    --button-background: #3f8e48;
+    --button-hover: #62a86a;
+    --button-active: #2b7934;
   }
 
-  &__danger {
+  &__error {
     --button-color: #fbfbfd;
-    --button-background: #ff0200;
-    --button-hover: #ff5857;
-    --button-active: #cc0200;
+    --button-background: #c33030;
+    --button-hover: #da4747;
+    --button-active: #b01e1e;
   }
 
   &__warning {
     --button-color: #fbfbfd;
-    --button-background: #fcc202;
-    --button-hover: #fed348;
-    --button-active: #c99b02;
+    --button-background: #e0ad05;
+    --button-hover: #f1bf1a;
+    --button-active: #c99b04;
   }
 
   &__info {
     --button-color: #fbfbfd;
-    --button-background: #1d1d1f;
-    --button-hover: #4e4e56;
-    --button-active: #080808;
+    --button-background: #568aa6;
+    --button-hover: #6f9db7;
+    --button-active: #477e9c;
+  }
+
+  // 次要类型
+  &__default.p-button__secondary {
+    --button-color: #333;
+    --button-background: #f9f9f9;
+    --button-hover: #f0f0f0;
+    --button-active: #e8e8e8;
+  }
+
+  &__primary.p-button__secondary {
+    --button-color: #616e9e;
+    --button-background: #d7e1ff;
+    --button-hover: #cfdbff;
+    --button-active: #c3d1fc;
+  }
+  &__success.p-button__secondary {
+    --button-color: #3f8e48;
+    --button-background: #c1ebc6;
+    --button-hover: #b9e2be;
+    --button-active: #b4dab9;
+  }
+  &__info.p-button__secondary {
+    --button-color: #257cab;
+    --button-background: #aed2e5;
+    --button-hover: #abcddf;
+    --button-active: #a6c8da;
+  }
+  &__warning.p-button__secondary {
+    --button-color: #c29500;
+    --button-background: #ffe694;
+    --button-hover: #f9e191;
+    --button-active: #f5dd8e;
+  }
+  &__error.p-button__secondary {
+    --button-color: #c33030;
+    --button-background: #ffd4d4;
+    --button-hover: #ffcece;
+    --button-active: #ffc8c8;
+  }
+
+  // 次次要类型
+  &__default.p-button__tertiary {
+    --button-color: #333;
+    --button-background: #fff;
+    --button-hover: #f9f9f9;
+    --button-active: #f0f0f0;
+  }
+  &__primary.p-button__tertiary {
+    --button-color: #616e9e;
+    --button-background: #fff;
+    --button-hover: #f9f9f9;
+    --button-active: #f0f0f0;
+  }
+  &__success.p-button__tertiary {
+    --button-color: #3f8e48;
+    --button-background: #fff;
+    --button-hover: #f9f9f9;
+    --button-active: #f0f0f0;
+  }
+  &__info.p-button__tertiary {
+    --button-color: #257cab;
+    --button-background: #fff;
+    --button-hover: #f9f9f9;
+    --button-active: #f0f0f0;
+  }
+  &__warning.p-button__tertiary {
+    --button-color: #c29500;
+    --button-background: #fff;
+    --button-hover: #f9f9f9;
+    --button-active: #f0f0f0;
+  }
+  &__error.p-button__tertiary {
+    --button-color: #c33030;
+    --button-background: #fff;
+    --button-hover: #f9f9f9;
+    --button-active: #f0f0f0;
   }
 
   // 尺寸
   &__large {
     --button-height: 40px;
-    --button-padding: 30px;
+    --button-padding: 38px;
     --button-font-size: 16px;
   }
 
   &__medium {
-    --button-height: 35px;
-    --button-padding: 25px;
-    --button-font-size: 15px;
+    --button-height: 36px;
+    --button-padding: 24px;
+    --button-font-size: 14px;
   }
 
   &__small {
     --button-height: 30px;
     --button-padding: 20px;
-    --button-font-size: 14px;
+    --button-font-size: 13px;
   }
 
   &__tiny {
-    --button-height: 25px;
-    --button-padding: 15px;
-    --button-font-size: 13px;
+    --button-height: 24px;
+    --button-padding: 14px;
+    --button-font-size: 12px;
   }
 }

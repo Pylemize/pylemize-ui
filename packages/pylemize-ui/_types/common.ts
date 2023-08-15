@@ -8,7 +8,7 @@ export type ColorType =
   | "primary"
   | "success"
   | "warning"
-  | "danger"
+  | "error"
   | "info"
   | "default"
 // 颜色类型列表
@@ -16,7 +16,7 @@ export const ColorTypeList = [
   "primary",
   "success",
   "warning",
-  "danger",
+  "error",
   "info",
   "default"
 ] as const
