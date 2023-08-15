@@ -2,7 +2,7 @@ import installer from "./defaults"
 
 export * from "./components"
 
-export * from "./utils"
+export * from "./_utils"
 
 export const install = installer.install
 

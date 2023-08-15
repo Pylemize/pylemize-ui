@@ -1,1 +1,37 @@
-@use "../var/button.scss";
+@use "./var/button.scss";
+
+.p-button {
+  position: relative;
+  border: none;
+  border-radius: var(--button-border-radius, 2px);
+  // box-shadow: var(--button-shadow);
+  font-size: var(--button-font-size);
+  background-color: var(--button-background);
+  height: var(--button-height);
+  padding: 0 var(--button-padding);
+  color: var(--button-color);
+
+  // 扩散效果
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: inherit;
+    transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 0 0 0 5px var(--button-background);
+  }
+
+  // 扩散效果需要的样式
+  &:not([disabled]):active::after,
+  &:not([secondary]):active::after,
+  &:not([tertiary]):active::after {
+    box-shadow: none;
+    opacity: 1;
+    transition: 0s;
+  }
+}

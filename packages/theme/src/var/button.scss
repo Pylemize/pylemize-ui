@@ -1,7 +1,7 @@
 .p-button {
   --button-border-radius: 2px;
 
-  // 不同类型
+  // 类型
   &__default {
     --button-color: #333;
     --button-background: #f0f0f0;
@@ -42,5 +42,30 @@
     --button-background: #1d1d1f;
     --button-hover: #4e4e56;
     --button-active: #080808;
+  }
+
+  // 尺寸
+  &__large {
+    --button-height: 40px;
+    --button-padding: 30px;
+    --button-font-size: 16px;
+  }
+
+  &__medium {
+    --button-height: 35px;
+    --button-padding: 25px;
+    --button-font-size: 15px;
+  }
+
+  &__small {
+    --button-height: 30px;
+    --button-padding: 20px;
+    --button-font-size: 14px;
+  }
+
+  &__tiny {
+    --button-height: 25px;
+    --button-padding: 15px;
+    --button-font-size: 13px;
   }
 }

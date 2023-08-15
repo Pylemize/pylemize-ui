@@ -1,17 +1,42 @@
 <template>
-  <button @click="clickHandle" type="button" style="border: 1px solid #000">
-    点击看看
+  <button
+    @click="handleClick"
+    :class="classList"
+    :style="styleList"
+    type="button"
+  >
+    <slot />
   </button>
 </template>
 
 <script setup lang="ts">
-const clickHandle = () => {
-  console.log("点击了按钮")
-}
-</script>
+import { useButton } from "./use-button"
+import { Props } from "./button"
+import { toRefs } from "vue"
+import { useRunFunction } from "../../_hooks"
 
-<script lang="ts">
-export default {
-  name: "PButton"
+defineOptions({ name: "PButton" })
+
+const { runFunction } = useRunFunction()
+
+// 初始化 props
+const props = defineProps(Props)
+
+const { classList, styleList } = useButton(props)
+
+const handleClick = (e: MouseEvent) => {
+  const { disabled } = toRefs(props)
+
+  /** 按钮被禁用，或者处于 loading 状态时，不执行 click 方法 */
+  if (disabled.value) {
+    /**
+     * 阻止默认行为
+     *
+     * @see event.preventDefault https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault
+     */
+    e.preventDefault()
+    return
+  }
+  runFunction(props.onClick, e)
 }
 </script>

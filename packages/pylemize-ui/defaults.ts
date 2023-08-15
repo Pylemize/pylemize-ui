@@ -1,6 +1,6 @@
 import * as components from "./components"
 import type { App } from "vue"
-import { objectEntries } from "./utils/compatible"
+import { objectEntries } from "./_utils"
 import { version } from "./package.json"
 
 /**
