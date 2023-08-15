@@ -1,4 +1,4 @@
-import type * as components from "./pylemize-ui"
+import type * as components from "pylemize-ui"
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
