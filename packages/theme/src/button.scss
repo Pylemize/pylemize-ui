@@ -43,9 +43,7 @@
   }
 
   // 扩散效果需要的样式
-  &:not([disabled]):active::after,
-  &:not([secondary]):active::after,
-  &:not([tertiary]):active::after {
+  &:not([disabled]):not([secondary]):not([tertiary]):active::after {
     box-shadow: none;
     opacity: 1;
     transition: 0s;
