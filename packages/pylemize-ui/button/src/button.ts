@@ -15,7 +15,7 @@ import {
 type ButtonNativeType = "button" | "submit" | "reset"
 const ButtonNativeTypeList = ["button", "submit", "reset"] as const
 
-export const Props = {
+export const buttonProps = {
   /**
    * 按钮样式
    */
@@ -76,8 +76,11 @@ export const Props = {
     (value: ButtonNativeType): boolean => {
       return ButtonNativeTypeList.includes(value) // 判断是否为 ButtonNativeTypeList 中的值
     }
-  ),
-  onClick: setFunctionProp<HandleMouseType>()
+  )
 } as const
+export const buttonEmits = {
+  click: (evt: MouseEvent) => evt instanceof MouseEvent
+}
 
-export type ButtonProps = ExtractPropTypes<typeof Props>
+export type ButtonProps = ExtractPropTypes<typeof buttonProps>
+export type ButtonEmits = typeof buttonEmits

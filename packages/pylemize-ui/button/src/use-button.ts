@@ -1,21 +1,29 @@
 import type { ClassList } from "../../_types"
-import { CSSProperties, Slots, ComputedRef, useSlots, computed } from "vue"
-import type { ButtonProps } from "./button"
+import {
+  CSSProperties,
+  Slots,
+  ComputedRef,
+  useSlots,
+  computed,
+  SetupContext
+} from "vue"
+import type { ButtonEmits, ButtonProps } from "./button"
 import { useColor, useGlobal } from "../../_hooks"
 import { sizeToStr } from "../../_utils"
 
 /**
- * useButton 返回值类型接口
- *
- * @param { Object } classList 类名列表
- * @param { Object } styleList 样式列表
+ * @description useButton 返回值类型接口
  */
 export interface UseButtonReturn {
   classList: ComputedRef<ClassList>
   styleList: ComputedRef<CSSProperties>
+  handleClick: (e: MouseEvent) => void
 }
 
-export const useButton = (props: ButtonProps): UseButtonReturn => {
+export const useButton = (
+  props: ButtonProps,
+  emit: SetupContext<ButtonEmits>["emit"]
+): UseButtonReturn => {
   // 获取插槽
   const slot: Slots = useSlots()
 
@@ -33,7 +41,9 @@ export const useButton = (props: ButtonProps): UseButtonReturn => {
       !(slot.default && slot.default() && slot.default()[0].children)
   )
 
-  // 类名列表
+  /**
+   * @description 类名列表
+   */
   const classList = computed((): ClassList => {
     return [
       "p-button",
@@ -51,7 +61,9 @@ export const useButton = (props: ButtonProps): UseButtonReturn => {
     ]
   })
 
-  // 样式列表
+  /**
+   * @description 样式列表
+   */
   const styleList = computed((): CSSProperties => {
     const { fontSize, textColor, color } = props
 
@@ -74,5 +86,15 @@ export const useButton = (props: ButtonProps): UseButtonReturn => {
     } as CSSProperties
   })
 
-  return { classList, styleList }
+  /**
+   * @description 点击事件
+   */
+  const handleClick = (e: MouseEvent): void => {
+    if (props.nativeType === "reset") {
+      // TODO: 重置表单
+    }
+    emit("click", e)
+  }
+
+  return { classList, styleList, handleClick }
 }
