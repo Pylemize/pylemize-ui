@@ -11,6 +11,9 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       pattern: "https://github.com/pylemize/pylemize-ui/docs/:path",
       text: "对本页提出修改建议"
     },
+    lastUpdated: {
+      text: "上次更新"
+    },
     // 右侧大纲标题
     outline: {
       label: "本页内容"
