@@ -8,7 +8,11 @@ export default defineConfig({
   title: "Pylemize UI",
   description: "Documentation site for pylemize-ui",
   themeConfig: {
-    logo: "/logo.svg"
+    logo: "/logo.svg",
+    footer: {
+      message: "Released under the MIT License.",
+      copyright: "Copyright © 2023-present Sioncovy"
+    }
   },
   markdown: {
     config: md => {
