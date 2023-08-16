@@ -25,8 +25,8 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     },
     nav: [
       { text: "首页", link: "/" },
-      { text: "文档", link: "/docs/" },
-      { text: "组件", link: "/components/button" }
+      { text: "文档", link: "/docs/", activeMatch: "^/docs/" },
+      { text: "组件", link: "/components/button", activeMatch: "^/components/" }
     ],
     sidebar: {
       "/docs/": [

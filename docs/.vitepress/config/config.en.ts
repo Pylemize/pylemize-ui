@@ -14,8 +14,12 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     },
     nav: [
       { text: "Home", link: "/en/" },
-      { text: "Docs", link: "/en/docs/" },
-      { text: "Components", link: "/en/components/button" }
+      { text: "Docs", link: "/en/docs/", activeMatch: "^/en/docs/" },
+      {
+        text: "Components",
+        link: "/en/components/button",
+        activeMatch: "^/en/components/"
+      }
     ],
     sidebar: {
       "/en/docs/": [
