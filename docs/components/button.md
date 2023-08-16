@@ -92,4 +92,4 @@
 | secondary | `boolean` | `false` | `'true' \| 'false'` | 是否为简约按钮 |
 | tertiary | `boolean` | `false` | `'true' \| 'false'` | 是否为精简按钮 |
 | disabled | `boolean` | `false` | `'true' \| 'false'` | 是否禁用按钮 |
-| onClick | `function` | `() => {}` | - | 点击按钮时触发的事件 |
+| nativeType | `string` | `button` | `'button' \| 'submit' \| 'reset'` | 原生 type |

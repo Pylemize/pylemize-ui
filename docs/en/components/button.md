@@ -92,4 +92,5 @@ Just for fun, remember to check the size.
 | secondary | `boolean` | `false` | `'true' \| 'false'` | minimalist button |
 | tertiary | `boolean` | `false` | `'true' \| 'false'` | simplified button |
 | disabled | `boolean` | `false` | `'true' \| 'false'` | disabled |
-| onClick | `function` | `() => {}` | - | Event triggered when the button is clicked |
+| nativeType | `string` | `button` | `'button' \| 'submit' \| 'reset'` | native type |
+
