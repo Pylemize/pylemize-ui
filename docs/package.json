@@ -7,10 +7,9 @@
     "build": "vitepress build .",
     "serve": "vitepress serve ."
   },
-  "devDependencies": {
-    "vitepress": "1.0.0-beta.3",
-    "vitepress-theme-demoblock": "^3.0.3",
-    "vue": "3.2.44"
+  "dependencies": {
+    "vitepress": "1.0.0-rc.4",
+    "vitepress-theme-demoblock": "^3.0.3"
   },
   "pnpm": {
     "peerDependencyRules": {
