@@ -1,10 +1,7 @@
-<script setup lang="ts">
-import { PButton } from "../../dist/es"
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>Hello, World</div>
-  <PButton></PButton>
 </template>
 
 <style scoped></style>
