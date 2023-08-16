@@ -2,6 +2,7 @@
   "name": "@pylemize-ui/docs",
   "private": true,
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vitepress dev .",
     "build": "vitepress build .",
