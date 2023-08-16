@@ -1,23 +1,20 @@
 import { defineConfig } from "vitepress"
 import { demoblockPlugin, demoblockVitePlugin } from "vitepress-theme-demoblock"
-import { nav } from "./config/nav"
-import { sidebar } from "./config/side-bar"
+import { zhConfig } from "./config.zh"
+import { enConfig } from "./config.en"
 
 // https://vitepress.vuejs.org/config/app-configs
 export default defineConfig({
   title: "Pylemize UI",
   description: "Documentation site for pylemize-ui",
   themeConfig: {
-    logo: { src: "/logo.svg" },
-    nav,
-    sidebar
+    logo: "/logo.svg"
   },
   markdown: {
     config: md => {
       md.use(demoblockPlugin)
     }
   },
-
   vite: {
     plugins: [demoblockVitePlugin()]
   },
@@ -25,11 +22,15 @@ export default defineConfig({
   locales: {
     root: {
       lang: "zh-CN",
-      label: "简体中文"
+      label: "简体中文",
+      link: "/",
+      ...zhConfig
     },
     en: {
-      lang: "en",
-      label: "English"
+      lang: "en-US",
+      label: "English",
+      link: "/en/",
+      ...enConfig
     }
   }
 })

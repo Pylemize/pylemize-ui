@@ -4,27 +4,25 @@ layout: home
 
 hero:
   name: "Pylemize UI"  
-  text: "A component library with a little bit, but not much"
+  text: "A simple Vue3 component library"
   tagline: Developed based on Vue3 + TypeScript + Vite
-  image:
-    src: /logo.svg
-    alt: LicoriceBear
+  image: /logo.svg
   actions:
     - theme: brand
       text: Don't look guide
-      link: /guide/
+      link: /en/docs/
 
 features:
-  - icon: 🎵
-    title: Sing
-    details: 按需引入
+  - icon: 💡
+    title: On-demand Import
+    details: Speed up production
   - icon: ⚡️
-    title: Dancing
-    details: 主题切换
+    title: Elegant
+    details: Native CSS variables for a more comfortable customization
   - icon: 🛠️
-    title: Rap
-    details: 基于TypeScript开发
-  - icon: 🏀
-    title: play
-    details: 基于Vite开发
+    title: Type-friendly
+    details: Developed with TypeScript to reduce pain
+  - icon: 🏗
+    title: Wow
+    details: Not taking off yet?
 ---
