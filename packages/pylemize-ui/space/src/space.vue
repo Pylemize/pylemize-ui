@@ -4,15 +4,13 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: "PSpace"
-}
-</script>
-
 <script setup lang="ts">
 import { useSpace } from "./use-space"
 import { Props } from "./space"
+
+defineOptions({
+  name: "PSpace"
+})
 
 const props = defineProps(Props)
 
