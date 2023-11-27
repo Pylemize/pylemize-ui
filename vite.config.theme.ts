@@ -25,10 +25,10 @@ export default (): UserConfigExport => {
       }
     },
     build: {
-      outDir: resolve(__dirname, "dist/dist"),
+      outDir: resolve(__dirname, "./dist/dist"),
       emptyOutDir: false,
       rollupOptions: {
-        input: resolve(__dirname, "packages/theme/index.scss"),
+        input: resolve(__dirname, "packages/pylemize-theme/index.scss"),
         output: {
           /**
            * 取消文件名 hash 值

@@ -1,6 +1,6 @@
 {
   "name": "pylemize-ui",
-  "private": true,
+  "private": false,
   "main": "index.js",
   "workspaces": [
     "packages/*",

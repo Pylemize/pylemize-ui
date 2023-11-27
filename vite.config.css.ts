@@ -4,7 +4,7 @@ import postcssPresetEnv from "postcss-preset-env"
 import autoprefixer from "autoprefixer"
 import type { UserConfigExport } from "vite"
 
-const input: string = resolve(__dirname, "./packages/theme/src")
+const input: string = resolve(__dirname, "./packages/pylemize-theme/src")
 
 export default (): UserConfigExport => {
   return {
